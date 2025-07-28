@@ -76,7 +76,7 @@ const WhatsAppContact = () => {
         </Card>
         
         <div className="mt-16 text-center">
-          <h3 className="text-xl font-semibold text-white mb-4">¿Por qué elegir WhatsApp?</h3>
+          <h3 className="text-xl font-semibold text-white mb-4">¿Por qué Deberias Elegirnos?</h3>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
             <div className="p-6 rounded-lg bg-black/30 border border-blue-500/20">
               <h4 className="font-medium text-green-400 mb-2">Respuesta Inmediata</h4>
