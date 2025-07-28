@@ -1,0 +1,194 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Cyberpunk Dark Theme Colors */
+    --background: 235 60% 5%;
+    --foreground: 210 40% 98%;
+
+    --card: 235 50% 8%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 235 50% 8%;
+    --popover-foreground: 210 40% 98%;
+
+    /* Neon Magenta Primary */
+    --primary: 320 100% 60%;
+    --primary-foreground: 210 40% 98%;
+
+    /* Neon Blue Secondary */
+    --secondary: 220 100% 60%;
+    --secondary-foreground: 210 40% 98%;
+
+    /* Darker Backgrounds for Muted Elements */
+    --muted: 235 40% 12%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    /* Neon Green Accent */
+    --accent: 140 100% 60%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 100% 60%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 235 40% 15%;
+    --input: 235 40% 15%;
+    --ring: 320 100% 60%;
+
+    --radius: 0.25rem;
+
+    --sidebar-background: 235 50% 8%;
+    --sidebar-foreground: 210 40% 98%;
+    --sidebar-primary: 320 100% 60%;
+    --sidebar-primary-foreground: 210 40% 98%;
+    --sidebar-accent: 235 40% 12%;
+    --sidebar-accent-foreground: 210 40% 98%;
+    --sidebar-border: 235 40% 15%;
+    --sidebar-ring: 320 100% 60%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    @apply scroll-smooth;
+  }
+  
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Rajdhani', sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Orbitron', sans-serif;
+  }
+}
+
+/* Cyberpunk Glitch Effect */
+@keyframes glitch {
+  0% {
+    text-shadow: 0.05em 0 0 rgba(255, 0, 140, 0.75), -0.05em -0.025em 0 rgba(0, 255, 255, 0.75);
+  }
+  14% {
+    text-shadow: 0.05em 0 0 rgba(255, 0, 140, 0.75), -0.05em -0.025em 0 rgba(0, 255, 255, 0.75);
+  }
+  15% {
+    text-shadow: -0.05em -0.025em 0 rgba(255, 0, 140, 0.75), 0.025em 0.025em 0 rgba(0, 255, 255, 0.75);
+  }
+  49% {
+    text-shadow: -0.05em -0.025em 0 rgba(255, 0, 140, 0.75), 0.025em 0.025em 0 rgba(0, 255, 255, 0.75);
+  }
+  50% {
+    text-shadow: 0.025em 0.05em 0 rgba(255, 0, 140, 0.75), 0.05em 0 0 rgba(0, 255, 255, 0.75);
+  }
+  99% {
+    text-shadow: 0.025em 0.05em 0 rgba(255, 0, 140, 0.75), 0.05em 0 0 rgba(0, 255, 255, 0.75);
+  }
+  100% {
+    text-shadow: -0.025em 0 0 rgba(255, 0, 140, 0.75), -0.025em -0.025em 0 rgba(0, 255, 255, 0.75);
+  }
+}
+
+.text-glitch {
+  animation: glitch 1s linear infinite;
+}
+
+/* Neon glow effects */
+.glow-magenta {
+  text-shadow: 0 0 5px rgba(255, 0, 140, 0.8), 0 0 10px rgba(255, 0, 140, 0.5);
+}
+
+.glow-blue {
+  text-shadow: 0 0 5px rgba(0, 170, 255, 0.8), 0 0 10px rgba(0, 170, 255, 0.5);
+}
+
+.glow-green {
+  text-shadow: 0 0 5px rgba(0, 255, 140, 0.8), 0 0 10px rgba(0, 255, 140, 0.5);
+}
+
+/* Scan line effect for sections */
+.scanlines {
+  position: relative;
+  overflow: hidden;
+}
+
+.scanlines::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: repeating-linear-gradient(
+    to bottom,
+    transparent 0%,
+    rgba(0, 0, 0, 0.05) 0.5%,
+    transparent 1%
+  );
+  pointer-events: none;
+  z-index: 10;
+}
+
+/* WhatsApp floating button pulse animation */
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(37, 211, 102, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+  }
+}
+
+.whatsapp-btn {
+  animation: pulse 2s infinite;
+}
+
+/* Grid pattern for background */
+.grid-bg {
+  background-image: 
+    linear-gradient(rgba(37, 38, 45, 0.7) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(37, 38, 45, 0.7) 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+/* Improve UI components */
+.shadow-neon-magenta {
+  box-shadow: 0 0 10px rgba(255, 0, 140, 0.5), 0 0 20px rgba(255, 0, 140, 0.3);
+}
+
+.shadow-neon-blue {
+  box-shadow: 0 0 10px rgba(0, 170, 255, 0.5), 0 0 20px rgba(0, 170, 255, 0.3);
+}
+
+.shadow-neon-green {
+  box-shadow: 0 0 10px rgba(0, 255, 140, 0.5), 0 0 20px rgba(0, 255, 140, 0.3);
+}
+
+.border-gradient {
+  border: 2px solid;
+  border-image: linear-gradient(45deg, rgba(255, 0, 140, 1), rgba(0, 170, 255, 1)) 1;
+}
+
+.testimonial-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
